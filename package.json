@@ -1,0 +1,31 @@
+{
+  "name": "bestofjs-newsletter",
+  "version": "0.0.1",
+  "description": "Bestof.js.org weekly newsletter",
+  "main": "index.js",
+  "scripts": {
+    "build-report": "DEBUG=* node src/build-data",
+    "build-html": "DEBUG=* node src/build-email",
+    "serve": "serve html"
+  },
+  "author": "Michael Rambeau",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.10.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "prettier": "^1.7.4"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "fs-extra": "^4.0.2",
+    "got": "^7.1.0",
+    "mjml": "^4.0.5",
+    "pretty-bytes": "^4.0.2",
+    "tinytime": "^0.2.6"
+  }
+}

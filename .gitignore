@@ -1,0 +1,9 @@
+.env
+node_modules
+*.log
+build
+.DS_Store
+package-lock.json
+
+# All HTML pages can be generated at any time from the reports
+html/*
