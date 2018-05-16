@@ -15,7 +15,10 @@ function renderNewsletter({ projects, date }) {
       <mj-body background-color="#ececec">
         ${renderHeader()}
         ${renderIntro()}
-        ${projects.map(renderProject).join(spacer())}
+        <mj-wrapper padding="0 20px 40px 20px">
+          ${projects.map(renderProject).join(spacer())}
+        </mj-wrapper>
+        <mj-divider border-color="#e65100"></mj-divider>
         ${renderFooter()}
       </mj-body>
     </mjml>

@@ -7,7 +7,10 @@ const formatOwnerAvatar = (owner_id, size) =>
   `https://avatars.githubusercontent.com/u/${owner_id}?v=3&s=${size}`
 
 function getProjectAvatarUrl(project, size) {
-  return project.icon
+  // svg icon seem to not work in email clients,
+  // so we always show the Github project owner avatar, not the project icon
+  const svgEnabled = false
+  return svgEnabled && project.icon
     ? formatIconUrl(project.icon)
     : formatOwnerAvatar(project.owner_id, size)
 }
@@ -22,10 +25,10 @@ function renderProject(project) {
   const url = getUrl(project)
   return `
 <mj-section background-color="white">
-  <mj-column width="20%" background-color="#fff">
-    <mj-image src="${iconUrl}" width="${size}" height="${size}"></mj-image>
+  <mj-column width="25%" background-color="#fff">
+    <mj-image src="${iconUrl}" width="${size}" height="${size}" alt="${project.name}"></mj-image>
   </mj-column>
-  <mj-column width="80%" background-color="#fff">
+  <mj-column width="75%" background-color="#fff">
     <mj-text padding="20px" font-size="18px">
       <a href="${url}">${project.name}</a> +${project.weekly} stars this week
     </mj-text>

@@ -7,8 +7,8 @@ const renderNewsletter = require('./mjml/render-newsletter')
 function buildNewsletter({ projects, date }) {
   const mjml = renderNewsletter({ projects, date })
   debug('Converting the mjml code', { size: prettyBytes(mjml.length) })
-  const html = mjml2html(mjml)
-  return html
+  const { html, errors } = mjml2html(mjml)
+  return { html, mjml, errors }
 }
 
 module.exports = buildNewsletter
