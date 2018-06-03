@@ -6,6 +6,7 @@ function getWeeklyScore(project) {
 function sortProjects(projects) {
   const key = 'weekly'
   return projects
+    .filter(project => project.deltas.length > 5)
     .map(project =>
       Object.assign({}, project, { [key]: getWeeklyScore(project) })
     )

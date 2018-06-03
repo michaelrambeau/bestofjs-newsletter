@@ -25,6 +25,7 @@
     "fs-extra": "^4.0.2",
     "got": "^7.1.0",
     "mjml": "^4.0.5",
+    "numeral": "^2.0.6",
     "pretty-bytes": "^4.0.2",
     "tinytime": "^0.2.6"
   }

@@ -4,7 +4,7 @@ const debug = require('debug')('*')
 const prettyBytes = require('pretty-bytes')
 
 const { dateToString } = require('../utils/utils')
-const data = require('../../reports/2018-05-12.json')
+const data = require('../../reports/2018-06-03.json')
 const buildNewsletter = require('./build-email-html')
 
 function writeFile(extension, data) {
@@ -21,7 +21,10 @@ function writeFile(extension, data) {
 }
 
 async function main() {
-  const { html, mjml, errors } = buildNewsletter(data)
+  const { html, mjml, errors } = buildNewsletter({
+    projects: data.projects,
+    provider: 'elasticemail'
+  })
   if (errors.length > 0) {
     console.error(errors)
   }

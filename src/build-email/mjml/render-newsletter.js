@@ -3,7 +3,7 @@ const renderIntro = require('./render-intro')
 const renderProject = require('./render-project')
 const renderFooter = require('./render-footer')
 
-function renderNewsletter({ projects, date }) {
+function renderNewsletter({ projects, provider }) {
   const spacer = (space = 20) => `<mj-spacer height="${space}px" />`
   return `
     <mjml>
@@ -19,7 +19,7 @@ function renderNewsletter({ projects, date }) {
           ${projects.map(renderProject).join(spacer())}
         </mj-wrapper>
         <mj-divider border-color="#e65100"></mj-divider>
-        ${renderFooter()}
+        ${renderFooter({ provider })}
       </mj-body>
     </mjml>
 `
